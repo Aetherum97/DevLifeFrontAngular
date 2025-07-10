@@ -10,7 +10,7 @@ import {
   AuthenticateResponses,
   AuthResponse,
 } from '../models/auth-responses.model';
-import { Observable, tap } from 'rxjs';
+import { firstValueFrom, Observable, tap } from 'rxjs';
 import { User } from '../../../shared/interface/user.interface';
 import { HttpResponse } from '@angular/common/http';
 
@@ -45,54 +45,33 @@ export class AuthService {
     });
   }
 
-  public handleLogin(loginForm: FormGroup<LoginForm>): void {
+  public async handleLogin(loginForm: FormGroup<LoginForm>): Promise<void> {
     const { email, password } = loginForm.value;
 
     if (!email || !password) {
-      return;
+      throw new Error('invalid operation: no email or pasword');
     }
 
-    this.authRepo.login(email, password).subscribe({
-      next: (response) => {
-        if (response) {
-          console.log(response);
-          this.setStorage(response);
-          this.updateAuthAndUserStates(response).subscribe({
-            next: () => {
-              this.navigation.gamePage();
-            },
-          });
-        } else {
-          console.warn('Login failed, API returned no data.');
-        }
-      },
-      error: (error) => console.error('Unexpected error', error),
-    });
+    const response = await firstValueFrom(this.authRepo.login(email, password));
+
+    if (!response?.body) throw new Error('invalid operation');
+
+    this.setStorage(response?.body);
   }
 
-  private updateAuthAndUserStates(
-    response: AuthResponse
-  ): Observable<AuthenticateResponses | null> {
-    this.authState.setAuthTokens({
-      accesToken: response.accessToken,
-      refreshToken: response.refreshToken,
-    });
+  public async authenticate(): Promise<void> {
+    const response = await firstValueFrom(this.authRepo.authenticate());
 
-    return this.authRepo.authenticate().pipe(
-      tap((response) => {
-        if (response) {
-          console.log('success');
-          console.log('authenticate :', response);
-        } else {
-          this.clearAuthData();
-        }
-      })
-    );
+    if (!response?.body) throw new Error('invalid operation');
+
+    console.log(response);
+    
+    this.setStorage(response?.body);
   }
 
-  private setStorage(response: AuthResponse): void {
+  private setStorage(response: AuthResponse | AuthenticateResponses): void {
     this.authStorage.setAccessToken(response.accessToken);
-    this.authStorage.setRefreshToken(response.refreshToken);
+    this.authStorage.setRefreshToken('@TODO: false refreshToken');
   }
 
   private clearAuthData(): void {

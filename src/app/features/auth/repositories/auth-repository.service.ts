@@ -44,12 +44,16 @@ export class AuthRepositoryService {
   public login(
     email: string,
     password: string
-  ): Observable<AuthResponse | null> {
+  ): Observable<HttpResponse<AuthResponse> | null> {
     return this.http
-      .post<AuthResponse>(`${this.BASE_API_URL}/Auth/login`, {
-        email: email,
-        password: password,
-      })
+      .post<AuthResponse>(
+        `${this.BASE_API_URL}/Auth/login`,
+        {
+          email: email,
+          password: password,
+        },
+        { observe: 'response', withCredentials: true }
+      )
       .pipe(
         catchError((error) => {
           console.error('Error logging in user', error);
@@ -58,21 +62,17 @@ export class AuthRepositoryService {
       );
   }
 
-  public authenticate(): Observable<AuthenticateResponses | null> {
+  public authenticate(): Observable<HttpResponse<AuthenticateResponses> | null> {
     return this.http
-      .post(`${this.BASE_API_URL}/Auth/Authenticate`, null, {
-        withCredentials: true,
-        responseType: 'text',
-        observe: 'response' as const,
-      })
+      .post<AuthenticateResponses>(
+        `${this.BASE_API_URL}/Auth/Authenticate`,
+        null,
+        {
+          observe: 'response',
+          withCredentials: true,
+        }
+      )
       .pipe(
-        map((resp) => {
-          if (resp.status === 200 && resp.body) {
-            const body = JSON.parse(resp.body) as AuthenticateResponses;
-            return body;
-          }
-          return null;
-        }),
         catchError((err) => {
           console.error('Error authenticating user', err);
           return of(null);
