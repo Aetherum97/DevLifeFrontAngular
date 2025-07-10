@@ -1,0 +1,40 @@
+<div class="max-w-md">
+  <h2>Créez un compte pour jouer !</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+    <div class="mt-5">
+      <input
+        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
+        type=""
+        placeholder="username"
+        formControlName="userName"
+      />
+      <input
+        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
+        type="email"
+        placeholder="E-mail"
+        formControlName="email"
+      />
+      <input
+        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
+        type="password"
+        placeholder="Ajouter un mot de passe "
+        formControlName="password1"
+      />
+      <input
+        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
+        type="password"
+        placeholder="Verifier le mot de passe "
+        formControlName="password2"
+      />
+    </div>
+    <button
+      class="text-xl font-bold"
+      type="submit"
+      height="h-18"
+      label="S'inscrire"
+    >
+      s'inscrire
+    </button>
+  </form>
+</div>

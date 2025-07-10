@@ -1,0 +1,30 @@
+<div class="max-w-md">
+  <h2>Connectez-vous à votre compte</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+    <p class="text-xl text-white">Bienvenue sur DevLife !</p>
+    <p class="text-xl text-white">Entrez vos identifiants pour continuer.</p>
+    <div class="mt-5">
+      <input
+        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
+        type="email"
+        placeholder="E-mail"
+        formControlName="email"
+      />
+      <input
+        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
+        type="password"
+        placeholder="Mot de passe"
+        formControlName="password"
+      />
+    </div>
+
+    <button
+      class="text-xl font-bold"
+      type="submit"
+      height="h-18"
+      label="Se connecter"
+    >
+      Connecter
+    </button>
+  </form>
+</div>
