@@ -10,9 +10,7 @@ import {
   AuthenticateResponses,
   AuthResponse,
 } from '../models/auth-responses.model';
-import { firstValueFrom, Observable, tap } from 'rxjs';
-import { User } from '../../../shared/interface/user.interface';
-import { HttpResponse } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -57,6 +55,12 @@ export class AuthService {
     if (!response?.body) throw new Error('invalid operation');
 
     this.setStorage(response?.body);
+    this.navigation.gamePage();
+  }
+
+  public handleLogOut() {
+    this.clearAuthData();
+    this.authRepo.logout();
   }
 
   public async authenticate(): Promise<void> {
@@ -65,7 +69,7 @@ export class AuthService {
     if (!response?.body) throw new Error('invalid operation');
 
     console.log(response);
-    
+
     this.setStorage(response?.body);
   }
 

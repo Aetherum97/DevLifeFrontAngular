@@ -1,10 +1,9 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { AuthenticateResponses, LoginRequest, LoginResponses } from '../models';
+import { AuthenticateResponses } from '../models';
 import { catchError, map, Observable, of } from 'rxjs';
 import { AuthResponse } from '../models/auth-responses.model';
-import { User } from '../../../shared/interface/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +18,15 @@ export class AuthRepositoryService {
     password: string
   ): Observable<any> {
     return this.http
-      .post(`${this.BASE_API_URL}/Auth/register`, {
-        email: email,
-        username: username,
-        password: password,
-      })
+      .post(
+        `${this.BASE_API_URL}/Auth/register`,
+        {
+          email: email,
+          username: username,
+          password: password,
+        },
+        { observe: 'response', withCredentials: true }
+      )
       .pipe(
         catchError((error) => {
           console.error('Error registering user', error);
@@ -60,6 +63,15 @@ export class AuthRepositoryService {
           return of(null);
         })
       );
+  }
+
+  public logout(): Observable<HttpResponse<void>> {
+    const response = this.http.post<void>(
+      `${this.BASE_API_URL}/Auth/logout`,
+      null,
+      { observe: 'response', withCredentials: true }
+    );
+    return response;
   }
 
   public authenticate(): Observable<HttpResponse<AuthenticateResponses> | null> {

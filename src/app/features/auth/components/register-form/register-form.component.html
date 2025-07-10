@@ -1,40 +1,124 @@
-<div class="max-w-md">
-  <h2>Créez un compte pour jouer !</h2>
+<form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+  <mat-card class="register-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Bienvenue sur DevLife !</mat-card-title>
+      <mat-card-subtitle
+        >Entrez vos informations afin de découvrir le monde du développement
+        !</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content class="register-card-content">
+      <mat-form-field subscriptSizing="dynamic" appearance="outline">
+        <mat-label>Nom d'utilisateur</mat-label>
+        <input formControlName="userName" matInput type="text" />
+        <mat-error
+          *ngIf="
+            registerForm.controls.userName.hasError('required') &&
+            (registerForm.controls.userName.dirty ||
+              registerForm.controls.userName.touched)
+          "
+        >
+          Le nom d'utilisateur est requis.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field subscriptSizing="dynamic" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="email" matInput type="email" />
 
-  <form [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
-    <div class="mt-5">
-      <input
-        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
-        type=""
-        placeholder="username"
-        formControlName="userName"
-      />
-      <input
-        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
-        type="email"
-        placeholder="E-mail"
-        formControlName="email"
-      />
-      <input
-        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
-        type="password"
-        placeholder="Ajouter un mot de passe "
-        formControlName="password1"
-      />
-      <input
-        class="h-16 p-4 w-full ring my-3 p-2 rounded-sm text-md"
-        type="password"
-        placeholder="Verifier le mot de passe "
-        formControlName="password2"
-      />
-    </div>
-    <button
-      class="text-xl font-bold"
-      type="submit"
-      height="h-18"
-      label="S'inscrire"
-    >
-      s'inscrire
-    </button>
-  </form>
-</div>
+        <mat-error
+          *ngIf="
+            registerForm.controls.email.hasError('required') &&
+            (registerForm.controls.email.dirty ||
+              registerForm.controls.email.touched)
+          "
+        >
+          L’e-mail est requis.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            registerForm.controls.email.hasError('email') &&
+            (registerForm.controls.email.dirty ||
+              registerForm.controls.email.touched)
+          "
+        >
+          Entrez un e-mail valide.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field subscriptSizing="dynamic" appearance="outline">
+        <mat-label>Mot de passe</mat-label>
+        <input
+          formControlName="password1"
+          [type]="isPasswordHided() ? 'password' : 'text'"
+          matInput
+        />
+        <button
+          class="mr-2"
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword($event)"
+        >
+          <mat-icon class="icon-outlined">{{
+            isPasswordHided() ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error
+          *ngIf="
+            registerForm.controls.password1.hasError('required') &&
+            (registerForm.controls.password1.dirty ||
+              registerForm.controls.password1.touched)
+          "
+        >
+          Le mot de passe est requis.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            registerForm.controls.password1.hasError('minlength') &&
+            (registerForm.controls.password1.dirty ||
+              registerForm.controls.password1.touched)
+          "
+        >
+          Doit contenir au moins 8 caractères.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            registerForm.controls.password1.hasError('pattern') &&
+            (registerForm.controls.password1.dirty ||
+              registerForm.controls.password1.touched)
+          "
+        >
+          Doit contenir au moins un chiffre et un caractère spécial.
+        </mat-error>
+        <mat-error
+          *ngIf="
+            registerForm.controls.password1.hasError('maxlength') &&
+            (registerForm.controls.password1.dirty ||
+              registerForm.controls.password1.touched)
+          "
+        >
+          Ne peut pas dépasser 100 caractères.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field subscriptSizing="dynamic" appearance="outline">
+        <mat-label>Confirmez le mot de passe</mat-label>
+        <mat-error
+          *ngIf="
+            registerForm.controls.password2.hasError('required') &&
+            (registerForm.controls.password2.dirty ||
+              registerForm.controls.password2.touched)
+          "
+        >
+          La confirmation du mot de passe est requise
+        </mat-error>
+        <input formControlName="password2" type="password" matInput />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="register-card-footer">
+      <a [routerLink]="['/']">
+        <button mat-button>Retour a l'accueil</button>
+      </a>
+      <button type="submit" mat-stroked-button>S'enregistrer</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
