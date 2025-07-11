@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { AVAILABLE_LOCALISATION } from './config';
-import { LocalizationPickerComponent } from './shared/reusable/internationalization/components/localization-picker/localization-picker.component';
+import { LocalizationPickerComponent } from './shared/reusable/internationalization';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LocalizationPickerComponent],
+  imports: [RouterOutlet, RouterLink, LocalizationPickerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

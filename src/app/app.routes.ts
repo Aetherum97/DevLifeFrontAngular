@@ -5,7 +5,7 @@ import { RegisterPageComponent } from './features/auth/pages/register-page/regis
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/landing',
+    redirectTo: '',
     pathMatch: 'full',
   },
   {

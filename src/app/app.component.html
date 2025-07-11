@@ -1,14 +1,6 @@
 <shared-localization-picker [availableLocalisations]="availableLocalisation" />
 
-<h1 i18n="@@welcome.title">Bienvenue sur notre application</h1>
-<p i18n="@@user.greeting">Bonjour {{ username() }}</p>
-
-@if (messageCount() > 0) {
-<div i18n="@@notification.message">
-  Vous avez {{ messageCount() }} nouveaux messages
-</div>
-} @for (item of items(); track item.id) {
-<div i18n="@@item.description">Description de l'élément {{ item.id }}</div>
-}
+<button routerLink="/login">login</button>
+<button routerLink="/register">register</button>
 
 <router-outlet />
