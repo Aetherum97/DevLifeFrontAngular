@@ -1,61 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="fr" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="nav.home" datatype="html">
-        <source>Accueil</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">4,5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="nav.register" datatype="html">
-        <source>Inscription</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">5,6</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="nav.login" datatype="html">
-        <source>Connexion</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">6,8</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="language.selector.label" datatype="html">
-        <source> <x id="INTERPOLATION" equiv-text="{{ currentLanguage.name }}"/> <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;arrow&quot; [class.open]=&quot;isDropdownOpen()&quot;&gt;"/>▼<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">16,20</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="welcome.title" datatype="html">
         <source>Bienvenue sur notre application</source>
+        <target>Wellcome on our app</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">44,45</context>
+          <context context-type="linenumber">2,3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="user.greeting" datatype="html">
-        <source>Bonjour <x id="INTERPOLATION" equiv-text="{{ username() }}"/></source>
+        <source>Bonjour <x id="INTERPOLATION" equiv-text="{{ username() }}" /></source>
+        <target>Hello <x id="INTERPOLATION" equiv-text="{{ username() }}" /></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">45,47</context>
+          <context context-type="linenumber">3,5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="notification.message" datatype="html">
-        <source> Vous avez <x id="INTERPOLATION" equiv-text="{{ messageCount() }}"/> nouveaux messages </source>
+        <source> Vous avez <x id="INTERPOLATION" equiv-text="{{ messageCount() }}" /> nouveaux
+          messages </source>
+        <target> You have <x id="INTERPOLATION" equiv-text="{{ messageCount() }}" /> new messages </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">49,51</context>
+          <context context-type="linenumber">7,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="item.description" datatype="html">
-        <source>Description de l&apos;élément <x id="INTERPOLATION" equiv-text="{{ item.id }}"/></source>
+        <source>Description de l&apos;élément <x id="INTERPOLATION" equiv-text="{{ item.id }}" /></source>
+        <target>Item description <x id="INTERPOLATION" equiv-text="{{ item.id }}" /></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">52,54</context>
+          <context context-type="linenumber">10,12</context>
         </context-group>
       </trans-unit>
     </body>

@@ -1,6 +1,6 @@
-import { ILanguage } from '../core/Interfaces';
+import { ILocalisation } from '../shared/reusable/internationalization';
 
-export const AVAILABLE_LOCALISATION: ILanguage[] = [
-  { code: 'fr', name: 'Français', url: 'http://localhost:4200' },
-  { code: 'en', name: 'English', url: 'http://localhost:4200/en' },
+export const AVAILABLE_LOCALISATION: ILocalisation[] = [
+  { code: 'en-US', label: 'English' },
+  { code: 'fr', label: 'Français' },
 ];

@@ -1,55 +1,14 @@
-<div class="app-container">
-  <header class="app-header">
-    <nav class="navigation">
-      <a routerLink="/" i18n="@@nav.home">Accueil</a>
-      <a routerLink="/register" i18n="@@nav.register">Inscription</a>
-      <a routerLink="/login" i18n="@@nav.login">Connexion</a>
-    </nav>
-    <div class="language-selector">
-      <button
-        class="language-toggle"
-        (click)="toggleDropdown()"
-        [attr.aria-expanded]="isDropdownOpen()"
-        aria-haspopup="true"
-        i18n="@@language.selector.label"
-      >
-        {{ currentLanguage.name }}
-        <span class="arrow" [class.open]="isDropdownOpen()">▼</span>
-      </button>
+<shared-localization-picker [availableLocalisations]="availableLocalisation" />
 
-      @if (isDropdownOpen()) {
-      <div class="language-dropdown" (click)="closeDropdown()">
-        <div class="dropdown-backdrop" (click)="closeDropdown()"></div>
-        <ul class="language-list" role="menu">
-          @for (language of availableLanguages; track language.code) {
-          <li role="none">
-            <button
-              class="language-option"
-              [class.active]="language.code === currentLanguage.code"
-              (click)="selectLanguage(language.code)"
-              role="menuitem"
-              [disabled]="language.code === currentLanguage.code"
-            >
-              {{ language.name }}
-            </button>
-          </li>
-          }
-        </ul>
-      </div>
-      }
-    </div>
-  </header>
+<h1 i18n="@@welcome.title">Bienvenue sur notre application</h1>
+<p i18n="@@user.greeting">Bonjour {{ username() }}</p>
 
-  <main class="app-main">
-    <h1 i18n="@@welcome.title">Bienvenue sur notre application</h1>
-    <p i18n="@@user.greeting">Bonjour {{ username() }}</p>
-
-    @if (messageCount() > 0) {
-    <div i18n="@@notification.message">
-      Vous avez {{ messageCount() }} nouveaux messages
-    </div>
-    } @for (item of items(); track item.id) {
-    <div i18n="@@item.description">Description de l'élément {{ item.id }}</div>
-    }
-  </main>
+@if (messageCount() > 0) {
+<div i18n="@@notification.message">
+  Vous avez {{ messageCount() }} nouveaux messages
 </div>
+} @for (item of items(); track item.id) {
+<div i18n="@@item.description">Description de l'élément {{ item.id }}</div>
+}
+
+<router-outlet />

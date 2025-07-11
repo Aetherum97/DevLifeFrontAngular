@@ -1,0 +1,1 @@
+export {LocalizationPickerComponent} from "./localization-picker/localization-picker.component"
