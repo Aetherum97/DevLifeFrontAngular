@@ -2,8 +2,6 @@ import { inject, Injectable } from '@angular/core';
 import { AuthRepositoryService } from '../repositories/auth-repository.service';
 import { AuthStorageService } from './auth-storage.service';
 import { AuthStateService } from './auth-state.service';
-import { NavigationService } from '../../../shared/services/navigation.service';
-import { UserStateService } from '../../../shared/services/user-state.service';
 import { FormGroup } from '@angular/forms';
 import { LoginForm, RegisterForm } from '../models/form-submit.model';
 import {
@@ -11,6 +9,8 @@ import {
   AuthResponse,
 } from '../models/auth-responses.model';
 import { firstValueFrom } from 'rxjs';
+import { NavigationService } from '../../../shared/app-common/services/navigation.service';
+import { UserStateService } from '../../../shared/app-common/services/user-state.service';
 
 @Injectable({
   providedIn: 'root',

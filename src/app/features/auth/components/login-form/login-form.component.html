@@ -1,20 +1,22 @@
 <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
   <mat-card class="login-card" appearance="outlined">
     <mat-card-header>
-      <mat-card-title>De retour sur DevLife !</mat-card-title>
-      <mat-card-subtitle
+      <mat-card-title i18n="@@login.title"
+        >De retour sur DevLife !</mat-card-title
+      >
+      <mat-card-subtitle i18n="@@login.subtitle"
         >Entrez votre email et votre mot de passe pour reprendre votre partie
         !</mat-card-subtitle
       >
     </mat-card-header>
     <mat-card-content class="login-card-content">
       <mat-form-field subscriptSizing="dynamic" appearance="outline">
-        <mat-label>E-mail</mat-label>
+        <mat-label i18n="@@login.email">E-mail</mat-label>
         <input formControlName="email" matInput type="email" />
       </mat-form-field>
 
       <mat-form-field subscriptSizing="dynamic" appearance="outline">
-        <mat-label>Mot de passe</mat-label>
+        <mat-label i18n="@@login.password">Mot de passe</mat-label>
         <input
           formControlName="password"
           [type]="isPasswordHided() ? 'password' : 'text'"
@@ -35,9 +37,11 @@
     </mat-card-content>
     <mat-card-actions class="login-card-footer">
       <a [routerLink]="['/']">
-        <button mat-button>Retour a l'accueil</button>
+        <button i18n="@@login.returnbtn" mat-button>Retour a l'accueil</button>
       </a>
-      <button type="submit" mat-stroked-button>Se connecter</button>
+      <button i18n="@@login.loginbtn" type="submit" mat-stroked-button>
+        Se connecter
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>

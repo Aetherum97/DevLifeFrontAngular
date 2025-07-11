@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="login.title" datatype="html">
+        <source>De retour sur DevLife !</source>
+        <target>Welcome back to DevLife!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login.subtitle" datatype="html">
+        <source>Entrez votre email et votre mot de passe pour reprendre votre partie !</source>
+        <target>Enter your email and password to continue your game!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login.email" datatype="html">
+        <source>E-mail</source>
+        <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login.password" datatype="html">
+        <source>Mot de passe</source>
+        <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login.returnbtn" datatype="html">
+        <source>Retour a l&apos;accueil</source>
+        <target>Back to home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login.loginbtn" datatype="html">
+        <source> Se connecter </source>
+        <target> Sign in </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.title" datatype="html">
+        <source>Bienvenue sur DevLife !</source>
+        <target>Welcome to DevLife!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.subtitle" datatype="html">
+        <source>Entrez vos informations afin de découvrir le monde du développement !</source>
+        <target>Enter your information to discover the world of development!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.username" datatype="html">
+        <source>Nom d&apos;utilisateur</source>
+        <target>Username</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.username.error" datatype="html">
+        <source> Le nom d&apos;utilisateur est requis. </source>
+        <target> Username is required. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.email" datatype="html">
+        <source>E-mail</source>
+        <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.email.error" datatype="html">
+        <source> L'e-mail est requis. </source>
+        <target> Email is required. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.valide.email.error" datatype="html">
+        <source> Entrez un e-mail valide. </source>
+        <target> Enter a valid email. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.password" datatype="html">
+        <source>Mot de passe</source>
+        <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">53,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.password.required.error" datatype="html">
+        <source> Le mot de passe est requis. </source>
+        <target> Password is required. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">78,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.password.lenght.error" datatype="html">
+        <source> Doit contenir au moins 8 caractères. </source>
+        <target> Must contain at least 8 characters. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">88,90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.password.char.error" datatype="html">
+        <source> Doit contenir au moins un chiffre et un caractère spécial. </source>
+        <target> Must contain at least one number and one special character. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">98,100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.password.max.lenght.error" datatype="html">
+        <source> Ne peut pas dépasser 100 caractères. </source>
+        <target> Cannot exceed 100 characters. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">108,110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.confirm.password" datatype="html">
+        <source>Confirmez le mot de passe</source>
+        <target>Confirm password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">112,113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.confirm.password.error" datatype="html">
+        <source> La confirmation du mot de passe est requise </source>
+        <target> Password confirmation is required </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">120,122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.return" datatype="html">
+        <source>Retour a l&apos;accueil</source>
+        <target>Back to home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">127,129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="register.submit" datatype="html">
+        <source>S&apos;enregistrer</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">
+            src/app/features/auth/components/register-form/register-form.component.html</context>
+          <context context-type="linenumber">129,130</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

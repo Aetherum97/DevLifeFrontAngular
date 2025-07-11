@@ -1,0 +1,8 @@
+<button matButton [matMenuTriggerFor]="menu">
+  {{ curentLocalisation()?.label }}
+</button>
+<mat-menu #menu="matMenu">
+  @for (localization of availableLocalisations(); track $index) {
+  <button (click)="handleLocalisationChange(localization.code)" mat-menu-item>{{ localization.label }}</button>
+  }
+</mat-menu>

@@ -1,5 +1,5 @@
 import { Component, inject, output, signal } from '@angular/core';
-import { EmailService } from '../../../../shared/services/email.service';
+import { EmailService } from '../../../../shared/app-common/services/email.service';
 import { AuthService } from '../../services/auth.service';
 import {
   FormControl,
