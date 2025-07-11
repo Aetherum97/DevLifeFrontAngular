@@ -1,0 +1,35 @@
+<mat-card class="card">
+  @if (image) {
+  <img mat-card-image [src]="image" alt="Card image" />
+  } @if (title || subtitle) {
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  }
+
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+
+  <mat-card-actions class="card-actions">
+    <ng-content select="[cardActions]"></ng-content>
+    <span class="spacer"></span>
+    <button mat-button (click)="openDetails()">Détails</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #detailsTemplate>
+  <h2 mat-dialog-title>{{ title }}</h2>
+  <mat-dialog-content class="dialog-content">
+    @if (image) {
+    <img mat-card-image [src]="image" alt="Card image" />
+    } @if (subtitle) {
+    <p class="subtitle">{{ subtitle }}</p>
+    }
+    <ng-content></ng-content>
+  </mat-dialog-content>
+  <!-- <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Fermer</button>
+  </mat-dialog-actions> -->
+</ng-template>

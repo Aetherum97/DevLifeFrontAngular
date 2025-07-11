@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  margin: 1rem 0;
+}
+
+.card {
+  max-width: 400px;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.dialog-content {
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.subtitle {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
