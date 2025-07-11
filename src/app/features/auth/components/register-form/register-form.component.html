@@ -13,39 +13,25 @@
       <mat-form-field subscriptSizing="dynamic" appearance="outline">
         <mat-label i18n="@@register.username">Nom d'utilisateur</mat-label>
         <input formControlName="userName" matInput type="text" />
-        <mat-error
-          i18n="@@register.username.error"
-          *ngIf="
-            registerForm.controls.userName.hasError('required') &&
-            (registerForm.controls.userName.dirty ||
-              registerForm.controls.userName.touched)
-          "
-        >
-          Le nom d'utilisateur est requis.
+        <mat-error i18n="@@register.username.error">
+          @if ((registerForm.controls.userName.hasError('required') &&
+          (registerForm.controls.userName.dirty ||
+          registerForm.controls.userName.touched))) { Le nom d'utilisateur est
+          requis. }
         </mat-error>
       </mat-form-field>
       <mat-form-field subscriptSizing="dynamic" appearance="outline">
         <mat-label i18n="@@register.email">E-mail</mat-label>
         <input formControlName="email" matInput type="email" />
-        <mat-error
-          i18n="@@register.email.error"
-          *ngIf="
-            registerForm.controls.email.hasError('required') &&
-            (registerForm.controls.email.dirty ||
-              registerForm.controls.email.touched)
-          "
-        >
-          L’e-mail est requis.
+        <mat-error i18n="@@register.email.error">
+          @if ( (registerForm.controls.email.hasError('required') &&
+          (registerForm.controls.email.dirty ||
+          registerForm.controls.email.touched)) ) { L’e-mail est requis. }
         </mat-error>
-        <mat-error
-          i18n="@@register.valide.email.error"
-          *ngIf="
-            registerForm.controls.email.hasError('email') &&
-            (registerForm.controls.email.dirty ||
-              registerForm.controls.email.touched)
-          "
-        >
-          Entrez un e-mail valide.
+        <mat-error i18n="@@register.valide.email.error">
+          @if ((registerForm.controls.email.hasError('email') &&
+          (registerForm.controls.email.dirty ||
+          registerForm.controls.email.touched))) { Entrez un e-mail valide. }
         </mat-error>
       </mat-form-field>
 
@@ -67,57 +53,37 @@
             isPasswordHided() ? "visibility_off" : "visibility"
           }}</mat-icon>
         </button>
-        <mat-error
-          i18n="@@register.password.required.error"
-          *ngIf="
-            registerForm.controls.password1.hasError('required') &&
-            (registerForm.controls.password1.dirty ||
-              registerForm.controls.password1.touched)
-          "
-        >
+        <mat-error i18n="@@register.password.required.error">
           Le mot de passe est requis.
         </mat-error>
-        <mat-error
-          i18n="@@register.password.lenght.error"
-          *ngIf="
-            registerForm.controls.password1.hasError('minlength') &&
-            (registerForm.controls.password1.dirty ||
-              registerForm.controls.password1.touched)
-          "
-        >
-          Doit contenir au moins 8 caractères.
+        <mat-error i18n="@@register.password.lenght.error">
+          @if ((registerForm.controls.password1.hasError('minlength') &&
+          (registerForm.controls.password1.dirty ||
+          registerForm.controls.password1.touched))) { Doit contenir au moins 8
+          caractères. }
         </mat-error>
-        <mat-error
-        i18n="@@register.password.char.error"
-          *ngIf="
-            registerForm.controls.password1.hasError('pattern') &&
-            (registerForm.controls.password1.dirty ||
-              registerForm.controls.password1.touched)
-          "
-        >
-          Doit contenir au moins un chiffre et un caractère spécial.
+        <mat-error i18n="@@register.password.char.error">
+          @if ( (registerForm.controls.password1.hasError('pattern') &&
+          (registerForm.controls.password1.dirty ||
+          registerForm.controls.password1.touched)) ) { Doit contenir au moins
+          un chiffre et un caractère spécial. }
         </mat-error>
-        <mat-error
-        i18n="@@register.password.max.lenght.error"
-          *ngIf="
-            registerForm.controls.password1.hasError('maxlength') &&
-            (registerForm.controls.password1.dirty ||
-              registerForm.controls.password1.touched)
-          "
-        >
-          Ne peut pas dépasser 100 caractères.
+        <mat-error i18n="@@register.password.max.lenght.error">
+          @if ( ( registerForm.controls.password1.hasError('maxlength') &&
+          (registerForm.controls.password1.dirty ||
+          registerForm.controls.password1.touched)) ) { Ne peut pas dépasser 100
+          caractères. }
         </mat-error>
       </mat-form-field>
       <mat-form-field subscriptSizing="dynamic" appearance="outline">
-        <mat-label i18n="@@register.confirm.password" >Confirmez le mot de passe</mat-label>
-        <mat-error i18n="@@register.confirm.password.error"
-          *ngIf="
-            registerForm.controls.password2.hasError('required') &&
-            (registerForm.controls.password2.dirty ||
-              registerForm.controls.password2.touched)
-          "
+        <mat-label i18n="@@register.confirm.password"
+          >Confirmez le mot de passe</mat-label
         >
-          La confirmation du mot de passe est requise
+        <mat-error i18n="@@register.confirm.password.error">
+          @if ((registerForm.controls.password2.hasError('required') &&
+          (registerForm.controls.password2.dirty ||
+          registerForm.controls.password2.touched))) { La confirmation du mot de
+          passe est requise }
         </mat-error>
         <input formControlName="password2" type="password" matInput />
       </mat-form-field>
@@ -126,7 +92,9 @@
       <a [routerLink]="['/']">
         <button i18n="@@register.return" mat-button>Retour a l'accueil</button>
       </a>
-      <button i18n="@@register.submit" type="submit" mat-stroked-button>S'enregistrer</button>
+      <button i18n="@@register.submit" type="submit" mat-stroked-button>
+        S'enregistrer
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>
